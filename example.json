@@ -1,0 +1,16 @@
+{
+	"directories" : {
+		"source" : "example/tables",
+		"target" : "example/ddl"
+	},
+
+	"database" : {
+		"host" : "localhost",
+		"dbname" : "tfidblocal",
+		"user" : "tfi",
+		"password" : "rahasia",
+		"port" : 5432
+	}
+	
+}
+
