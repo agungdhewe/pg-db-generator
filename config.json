@@ -1,0 +1,15 @@
+{
+	"directories" : {
+		"source" : "build/tables",
+		"target" : "build/ddl"
+	},
+
+	"database" : {
+		"host" : "localhost",
+		"dbname" : "mydb",
+		"user" : "user",
+		"password" : "pass",
+		"port" : 5432
+	}
+	
+}

@@ -1,0 +1,15 @@
+{
+	"schema" : "public",
+	"name" : "usertype",
+	"descr" : "daftar user type",
+	"fields" : {
+		"usertype_id" : {"type":"varchar", "length":7, "nullable":false},
+		"name" : {"type":"varchar", "length":32, "nullable":false},
+		"descr" : {"type":"varchar", "length":255}
+	},
+	"primarykeys" : ["usertype_id"],
+	"uniques" : {
+		"unq_usertype_name" : ["name"]
+	},
+	"relations" : {}
+}
