@@ -45,9 +45,15 @@ export function modify(field) {
 		setdefault = `set ${setdefault}`
 	}
 
+	if (setnull=='') {
+		setnull = 'drop not null'
+	} else {
+		setnull = `set not null`
+	}
+
 	var defs = [
 		`\talter column ${field.name} type ${fieldtype}`,
-		`\talter column ${field.name} set ${setnull}`,
+		`\talter column ${field.name} ${setnull}`,
 		`\talter column ${field.name} ${setdefault}`
 	]
 
@@ -70,7 +76,9 @@ function getFieldType(field) {
 
 function getFieldSetNull(field) {
 	var setnull
-	if (field.nullable) {
+	if (field.nullable===undefined) {
+		setnull = ''
+	} else if (field.nullable==true) {
 		setnull = ''
 	} else {
 		setnull = 'not null'

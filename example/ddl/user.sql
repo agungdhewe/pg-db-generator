@@ -1,7 +1,7 @@
 -- user.sql
 -- created: Tue Jul 16 2024 08:43:14 GMT+0700 (Western Indonesia Time)
 -- last modified: Tue Jul 16 2024 08:43:14 GMT+0700 (Western Indonesia Time)
--- generated at: 2024-07-16T08:46:22.089+07:00
+-- generated at: 2024-07-16T09:16:45.772+07:00
 create table if not exists public.user (
 	user_id bigserial not null ,
 	primary key(user_id)
@@ -15,10 +15,10 @@ alter table public.user
 	add column if not exists fullname varchar(90) not null ,
 	add column if not exists isdisabled boolean not null default false,
 	add column if not exists usertype_id varchar(7) not null ,
-	add column if not exists createby varchar(64) not null ,
+	add column if not exists createby varchar(64)  ,
 	add column if not exists createdate timestamp not null default now(),
-	add column if not exists modifyby varchar(64) not null ,
-	add column if not exists modifydate timestamp not null 
+	add column if not exists modifyby varchar(64)  ,
+	add column if not exists modifydate timestamp  
 ;
 
 -- modify columns
@@ -39,16 +39,16 @@ alter table public.user
 	alter column usertype_id set not null,
 	alter column usertype_id drop default,
 	alter column createby type varchar(64),
-	alter column createby set not null,
+	alter column createby drop not null,
 	alter column createby drop default,
 	alter column createdate type timestamp,
 	alter column createdate set not null,
 	alter column createdate set default now(),
 	alter column modifyby type varchar(64),
-	alter column modifyby set not null,
+	alter column modifyby drop not null,
 	alter column modifyby drop default,
 	alter column modifydate type timestamp,
-	alter column modifydate set not null,
+	alter column modifydate drop not null,
 	alter column modifydate drop default
 ;
 
