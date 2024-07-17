@@ -1,0 +1,22 @@
+{
+	"schema" : "product",
+	"name" : "gro",
+	"descr" : "daftar group",
+	"fields" : {
+		"gro_id" : {"type":"varchar", "length":"32", "nullable":false},
+		"name" : {"type":"varchar", "length":90, "nullable":false},
+		"isdisabled" : {"type":"boolean", "nullable":false, "default":"false"}
+	},
+	"primarykeys" : ["gro_id"],
+	"uniques" : {
+		"unq_gro_name" : ["name"]
+	},
+	"relations" : {
+		"gro_id" : {
+			"name" : "fk_ctg_gro_id",
+			"table" : "product.gro",
+			"field" : "gro_id"
+		}
+	}
+}
+

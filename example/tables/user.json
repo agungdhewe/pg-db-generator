@@ -8,7 +8,7 @@
 		"password" : {"type":"varchar", "length":255, "nullable":false},
 		"fullname" : {"type":"varchar", "length":90, "nullable":false},
 		"isdisabled" : {"type":"boolean", "nullable":false, "default":"false"},
-		"usertype_id" : {"type":"varchar", "length":7, "nullable":false}
+		"usertype_id" : {"type":"varchar", "length":7, "nullable":true}
 	},
 	"primarykeys" : ["user_id"],
 	"uniques" : {

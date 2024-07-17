@@ -1,7 +1,7 @@
 -- usertype.sql
 -- created: Tue Jul 16 2024 08:43:14 GMT+0700 (Western Indonesia Time)
 -- last modified: Tue Jul 16 2024 08:43:14 GMT+0700 (Western Indonesia Time)
--- generated at: 2024-07-16T09:16:45.772+07:00
+-- generated at: 2024-07-16T09:27:24.277+07:00
 create table if not exists public.usertype (
 	usertype_id varchar(7) not null ,
 	primary key(usertype_id)

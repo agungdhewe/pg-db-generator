@@ -1,7 +1,7 @@
 -- user.sql
--- created: Tue Jul 16 2024 08:43:14 GMT+0700 (Western Indonesia Time)
--- last modified: Tue Jul 16 2024 08:43:14 GMT+0700 (Western Indonesia Time)
--- generated at: 2024-07-16T09:16:45.772+07:00
+-- created: Tue Jul 16 2024 09:25:36 GMT+0700 (Western Indonesia Time)
+-- last modified: Tue Jul 16 2024 09:25:36 GMT+0700 (Western Indonesia Time)
+-- generated at: 2024-07-16T09:27:24.277+07:00
 create table if not exists public.user (
 	user_id bigserial not null ,
 	primary key(user_id)
@@ -14,7 +14,7 @@ alter table public.user
 	add column if not exists password varchar(255) not null ,
 	add column if not exists fullname varchar(90) not null ,
 	add column if not exists isdisabled boolean not null default false,
-	add column if not exists usertype_id varchar(7) not null ,
+	add column if not exists usertype_id varchar(7)  ,
 	add column if not exists createby varchar(64)  ,
 	add column if not exists createdate timestamp not null default now(),
 	add column if not exists modifyby varchar(64)  ,
@@ -36,7 +36,7 @@ alter table public.user
 	alter column isdisabled set not null,
 	alter column isdisabled set default false,
 	alter column usertype_id type varchar(7),
-	alter column usertype_id set not null,
+	alter column usertype_id drop not null,
 	alter column usertype_id drop default,
 	alter column createby type varchar(64),
 	alter column createby drop not null,
